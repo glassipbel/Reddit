@@ -18,6 +18,7 @@ extension UIImageView {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.clipsToBounds = true
         self.contentMode = .scaleAspectFit
+        self.isUserInteractionEnabled = true
     }
     
     public func imageAsync(url: URL) {

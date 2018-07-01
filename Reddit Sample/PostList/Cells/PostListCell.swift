@@ -51,12 +51,12 @@ final class PostListCell: UICollectionViewCell {
         return imageView
     }()
     
-    private let dismissImageView: UIImageView = {
+    private lazy var dismissImageView: UIImageView = {
         let imageView = UIImageView(image: #imageLiteral(resourceName: "dismiss_icon"), target: self, action: #selector(tapDismiss))
         return imageView
     }()
     
-    private let dismissButton: UIButton = {
+    private lazy var dismissButton: UIButton = {
         let button = UIButton(font: UIFont.boldSystemFont(ofSize: 12.0), titleColor: .white, title: "Dismiss Post", backgroundColor: .clear)
         button.addTarget(self, action: #selector(tapDismiss), for: .touchUpInside)
         return button
@@ -117,10 +117,10 @@ extension PostListCell: GenericCollectionCellProtocol, GenericCollectionCellSelf
         commentsLabel.text = "\(post.commentsAmount) comments"
     }
     
-    func collectionView(collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard let id = configFile?.postId, let post = configFile?.provider?.getPost(withId: id) else { return }
-        configFile?.actions?.tapPost(post: post)
-    }
+//    func collectionView(collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        guard let id = configFile?.postId, let post = configFile?.provider?.getPost(withId: id) else { return }
+//        configFile?.actions?.tapPost(post: post)
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath, with item: Any) -> CGSize {
         self.collectionView(collectionView: collectionView, cellForItemAt: indexPath, with: item)
@@ -137,10 +137,10 @@ extension PostListCell {
         contentView.addSubview(thumbnailImageView)
         contentView.addSubview(titleLabel)
         contentView.addSubview(rightArrowImageView)
-        contentView.addSubview(dismissImageView)
-        contentView.addSubview(dismissButton)
         contentView.addSubview(commentsLabel)
         contentView.addSubview(bottomSeparatorView)
+        contentView.addSubview(dismissImageView)
+        contentView.addSubview(dismissButton)
     }
     
     private func setupConstraints() {
