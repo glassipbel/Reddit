@@ -32,6 +32,7 @@
 		0A776B4E20E955460070B765 /* PostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B4D20E955460070B765 /* PostProvider.swift */; };
 		0A776B5120E9584D0070B765 /* PostMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B5020E9584D0070B765 /* PostMapper.swift */; };
 		0A776B5320E958740070B765 /* PostManualMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B5220E958740070B765 /* PostManualMapper.swift */; };
+		0A776B5520E95CF90070B765 /* PostListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B5420E95CF90070B765 /* PostListController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		0A776B4D20E955460070B765 /* PostProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProvider.swift; sourceTree = "<group>"; };
 		0A776B5020E9584D0070B765 /* PostMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMapper.swift; sourceTree = "<group>"; };
 		0A776B5220E958740070B765 /* PostManualMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManualMapper.swift; sourceTree = "<group>"; };
+		0A776B5420E95CF90070B765 /* PostListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +248,7 @@
 		0A776B3C20E9460C0070B765 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				0A776B5420E95CF90070B765 /* PostListController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -366,6 +369,7 @@
 				0A776B4C20E954CC0070B765 /* URLSessionDownloader.swift in Sources */,
 				0A776B2D20E944620070B765 /* GenericCollectionCellSelfSizingProtocol.swift in Sources */,
 				0A776B2E20E944620070B765 /* GenericCollectionHeaderProtocol.swift in Sources */,
+				0A776B5520E95CF90070B765 /* PostListController.swift in Sources */,
 				0A776B3020E944620070B765 /* GenericCollectionCellProtocol.swift in Sources */,
 				0A776B3520E944620070B765 /* DownloaderAbstract.swift in Sources */,
 				0A776B2920E944620070B765 /* SizingType.swift in Sources */,
