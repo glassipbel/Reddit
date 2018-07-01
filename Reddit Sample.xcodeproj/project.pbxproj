@@ -24,6 +24,8 @@
 		0A776B3220E944620070B765 /* GenericCollectionHeaderSelfSizingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B2020E944620070B765 /* GenericCollectionHeaderSelfSizingProtocol.swift */; };
 		0A776B3320E944620070B765 /* APIErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B2320E944620070B765 /* APIErrors.swift */; };
 		0A776B3520E944620070B765 /* DownloaderAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B2720E944620070B765 /* DownloaderAbstract.swift */; };
+		0A776B4120E946600070B765 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B4020E946600070B765 /* PostListViewController.swift */; };
+		0A776B4320E9467C0070B765 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B4220E9467C0070B765 /* PostDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		0A776B2020E944620070B765 /* GenericCollectionHeaderSelfSizingProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenericCollectionHeaderSelfSizingProtocol.swift; sourceTree = "<group>"; };
 		0A776B2320E944620070B765 /* APIErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIErrors.swift; sourceTree = "<group>"; };
 		0A776B2720E944620070B765 /* DownloaderAbstract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloaderAbstract.swift; sourceTree = "<group>"; };
+		0A776B4020E946600070B765 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
+		0A776B4220E9467C0070B765 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -206,6 +210,7 @@
 		0A776B3920E946000070B765 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0A776B4220E9467C0070B765 /* PostDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -213,6 +218,7 @@
 		0A776B3A20E9460C0070B765 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				0A776B4020E946600070B765 /* PostListViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -324,6 +330,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A776B2B20E944620070B765 /* GenericCellConfigurator.swift in Sources */,
+				0A776B4320E9467C0070B765 /* PostDetailViewController.swift in Sources */,
+				0A776B4120E946600070B765 /* PostListViewController.swift in Sources */,
 				0A776B3320E944620070B765 /* APIErrors.swift in Sources */,
 				0A776B2D20E944620070B765 /* GenericCollectionCellSelfSizingProtocol.swift in Sources */,
 				0A776B2E20E944620070B765 /* GenericCollectionHeaderProtocol.swift in Sources */,

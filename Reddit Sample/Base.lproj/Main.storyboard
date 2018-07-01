@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Post Detail View Controller-->
         <scene sceneID="07q-c8-Vhd">
             <objects>
-                <viewController id="8tH-w0-KDb" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PostDetailViewController" id="8tH-w0-KDb" customClass="PostDetailViewController" customModule="Reddit_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="QV8-WJ-pPB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -26,10 +26,10 @@
             </objects>
             <point key="canvasLocation" x="306" y="168"/>
         </scene>
-        <!--View Controller-->
+        <!--Post List View Controller-->
         <scene sceneID="El9-m1-pKh">
             <objects>
-                <viewController id="ieX-DH-wHv" sceneMemberID="viewController">
+                <viewController id="ieX-DH-wHv" customClass="PostListViewController" customModule="Reddit_Sample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cCb-zx-Slz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
