@@ -35,8 +35,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QY1-Ss-tmx">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Qc4-LM-RxI">
                                     <size key="itemSize" width="50" height="50"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -45,17 +45,35 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7HK-bp-4Nq">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="1Un-TF-s0b"/>
+                                </constraints>
+                                <state key="normal" title="Dismiss All">
+                                    <color key="titleColor" red="1" green="0.60626837066323569" blue="0.1712780457581724" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapDismissAll" destination="ieX-DH-wHv" eventType="touchUpInside" id="mgr-GY-Trh"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7HK-bp-4Nq" firstAttribute="leading" secondItem="rWn-7k-8Ri" secondAttribute="leading" id="2L2-Gz-QD4"/>
+                            <constraint firstItem="rWn-7k-8Ri" firstAttribute="trailing" secondItem="7HK-bp-4Nq" secondAttribute="trailing" id="69h-W2-ue2"/>
                             <constraint firstItem="QY1-Ss-tmx" firstAttribute="top" secondItem="cCb-zx-Slz" secondAttribute="topMargin" id="Sqq-1u-zIF"/>
-                            <constraint firstItem="QY1-Ss-tmx" firstAttribute="bottom" secondItem="rWn-7k-8Ri" secondAttribute="bottom" id="Wqh-vS-GHS"/>
+                            <constraint firstItem="7HK-bp-4Nq" firstAttribute="top" secondItem="QY1-Ss-tmx" secondAttribute="bottom" id="Vgw-2A-rCV"/>
+                            <constraint firstItem="rWn-7k-8Ri" firstAttribute="bottom" secondItem="7HK-bp-4Nq" secondAttribute="bottom" id="p3f-nS-a64"/>
                             <constraint firstItem="QY1-Ss-tmx" firstAttribute="trailing" secondItem="rWn-7k-8Ri" secondAttribute="trailing" id="qWE-2O-gvg"/>
                             <constraint firstItem="QY1-Ss-tmx" firstAttribute="leading" secondItem="rWn-7k-8Ri" secondAttribute="leading" id="t89-WG-GL2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rWn-7k-8Ri"/>
                     </view>
                     <navigationItem key="navigationItem" id="zUS-kv-eMZ"/>
+                    <connections>
+                        <outlet property="collectionView" destination="QY1-Ss-tmx" id="CPs-gb-Urd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nC-0b-8Qi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
