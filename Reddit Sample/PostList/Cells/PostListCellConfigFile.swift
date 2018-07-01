@@ -21,6 +21,5 @@ protocol PostListCellProvider: class {
 
 protocol PostListCellActions: class {
     func tapDismiss(post: Post)
-    func tapRead(post: Post)
     func tapPost(post: Post)
 }

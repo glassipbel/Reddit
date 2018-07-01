@@ -90,13 +90,33 @@ final class PostListCell: UICollectionViewCell {
     }
     
     @objc func tapDismiss() {
-        
+        guard let id = configFile?.postId, let post = configFile?.provider?.getPost(withId: id) else { return }
+        configFile?.actions?.tapDismiss(post: post)
     }
+    
+    private var configFile: PostListCellConfigFile?
 }
 
 extension PostListCell: GenericCollectionCellProtocol, GenericCollectionCellSelfSizingProtocol {
     func collectionView(collectionView: UICollectionView, cellForItemAt indexPath: IndexPath, with item: Any) {
-        //TODO KEV:
+        guard let configFile = item as? PostListCellConfigFile else { return }
+        guard let post = configFile.provider?.getPost(withId: configFile.postId) else { return }
+        
+        self.configFile = configFile
+        
+        readView.isHidden = post.read
+        authorLabel.text = post.author.username
+        createdTimeLabel.text = post.creationTimePrintable
+        if let url = post.thumbnailURL {
+            thumbnailImageView.imageAsync(url: url)
+        }
+        titleLabel.text = post.title
+        commentsLabel.text = "\(post.commentsAmount) comments"
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let id = configFile?.postId, let post = configFile?.provider?.getPost(withId: id) else { return }
+        configFile?.actions?.tapPost(post: post)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath, with item: Any) -> CGSize {
