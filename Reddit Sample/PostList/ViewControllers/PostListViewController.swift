@@ -67,7 +67,7 @@ extension PostListViewController: PostListCellActions {
            datasource?.reloadAt(indexPath: indexPath)
         }
         
-        showDetailViewController(PostDetailViewController.newInstance(), sender: self)
+        showDetailViewController(PostDetailViewController.newInstance(post: post), sender: self)
     }
 }
 

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -18,11 +19,57 @@
                     <view key="view" contentMode="scaleToFill" id="QV8-WJ-pPB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Cg7-xG-ESo">
+                                <rect key="frame" x="14" y="145" width="347" height="195"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Cg7-xG-ESo" secondAttribute="height" multiplier="16:9" id="s09-LZ-SV1"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="pHW-ba-U1u" appends="YES" id="AmL-zt-Q3P"/>
+                                </connections>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UlG-vh-ufq">
+                                <rect key="frame" x="14" y="109" width="347" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ptY-T1-s8e">
+                                <rect key="frame" x="14" y="356" width="347" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="4Hr-9M-Q0O" firstAttribute="trailing" secondItem="ptY-T1-s8e" secondAttribute="trailing" constant="14" id="I5K-gA-3fM"/>
+                            <constraint firstItem="ptY-T1-s8e" firstAttribute="leading" secondItem="4Hr-9M-Q0O" secondAttribute="leading" constant="14" id="VA7-XD-xsp"/>
+                            <constraint firstItem="Cg7-xG-ESo" firstAttribute="top" secondItem="UlG-vh-ufq" secondAttribute="bottom" constant="15" id="WyA-qq-YfW"/>
+                            <constraint firstItem="Cg7-xG-ESo" firstAttribute="leading" secondItem="UlG-vh-ufq" secondAttribute="leading" id="Zoe-D1-A4Z"/>
+                            <constraint firstItem="UlG-vh-ufq" firstAttribute="top" secondItem="4Hr-9M-Q0O" secondAttribute="top" constant="45" id="bDO-Uc-f3k"/>
+                            <constraint firstItem="4Hr-9M-Q0O" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ptY-T1-s8e" secondAttribute="bottom" constant="14" id="eql-ak-4y5"/>
+                            <constraint firstItem="4Hr-9M-Q0O" firstAttribute="trailing" secondItem="UlG-vh-ufq" secondAttribute="trailing" constant="14" id="mtp-tE-QSo"/>
+                            <constraint firstItem="UlG-vh-ufq" firstAttribute="leading" secondItem="4Hr-9M-Q0O" secondAttribute="leading" constant="14" id="sO3-dB-Ue9"/>
+                            <constraint firstItem="ptY-T1-s8e" firstAttribute="top" secondItem="Cg7-xG-ESo" secondAttribute="bottom" constant="16" id="t2j-7M-icT"/>
+                            <constraint firstItem="4Hr-9M-Q0O" firstAttribute="trailing" secondItem="Cg7-xG-ESo" secondAttribute="trailing" constant="14" id="uNW-8S-ImC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="4Hr-9M-Q0O"/>
                     </view>
+                    <connections>
+                        <outlet property="authorLabel" destination="UlG-vh-ufq" id="DkD-TJ-8PA"/>
+                        <outlet property="thumbnailImageView" destination="Cg7-xG-ESo" id="9DL-ei-qHY"/>
+                        <outlet property="titleLabel" destination="ptY-T1-s8e" id="Eb8-bx-bNJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PTH-DR-Zl0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="pHW-ba-U1u">
+                    <connections>
+                        <action selector="tapImage:" destination="8tH-w0-KDb" id="0ed-rL-qTB"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="306" y="168"/>
         </scene>
