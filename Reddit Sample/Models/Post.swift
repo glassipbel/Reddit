@@ -42,8 +42,8 @@ final class Post {
         self.init(id: id, author: author, creationTime: creationTime, thumbnailURL: thumbnailURL, title: title, commentsAmount: commentsAmount)
     }
     
-    private let readPostsKey = "read_posts"
-    private let dismissedPostsKey = "dismissed_posts"
+    private static let readPostsKey = "read_posts"
+    private static let dismissedPostsKey = "dismissed_posts"
 }
 
 extension Post {
@@ -55,9 +55,16 @@ extension Post {
         return dateFormatter.string(from: self.creationTime)
     }
     
+    static func cleanPostsState() {
+        let defaults = UserDefaults.standard
+        defaults.set(nil, forKey: readPostsKey)
+        defaults.set(nil, forKey: dismissedPostsKey)
+        defaults.synchronize()
+    }
+    
     var read: Bool {
         let defaults = UserDefaults.standard
-        if let readPosts = defaults.value(forKey: readPostsKey) as? [String] {
+        if let readPosts = defaults.value(forKey: Post.readPostsKey) as? [String] {
             return readPosts.contains(id)
         }
         return false
@@ -65,19 +72,19 @@ extension Post {
     
     func markAsRead() {
         let defaults = UserDefaults.standard
-        if var readPosts = defaults.value(forKey: readPostsKey) as? [String] {
+        if var readPosts = defaults.value(forKey: Post.readPostsKey) as? [String] {
             if readPosts.contains(id) { return }
             readPosts.append(id)
-            defaults.set(readPosts, forKey: readPostsKey)
+            defaults.set(readPosts, forKey: Post.readPostsKey)
         } else {
-            defaults.set([id], forKey: readPostsKey)
+            defaults.set([id], forKey: Post.readPostsKey)
         }
         defaults.synchronize()
     }
     
     var dismissed: Bool {
         let defaults = UserDefaults.standard
-        if let dismissedPosts = defaults.value(forKey: dismissedPostsKey) as? [String] {
+        if let dismissedPosts = defaults.value(forKey: Post.dismissedPostsKey) as? [String] {
             return dismissedPosts.contains(id)
         }
         return false
@@ -85,12 +92,12 @@ extension Post {
     
     func markAsDismissed() {
         let defaults = UserDefaults.standard
-        if var dismissedPosts = defaults.value(forKey: dismissedPostsKey) as? [String] {
+        if var dismissedPosts = defaults.value(forKey: Post.dismissedPostsKey) as? [String] {
             if dismissedPosts.contains(id) { return }
             dismissedPosts.append(id)
-            defaults.set(dismissedPosts, forKey: dismissedPostsKey)
+            defaults.set(dismissedPosts, forKey: Post.dismissedPostsKey)
         } else {
-            defaults.set([id], forKey: dismissedPostsKey)
+            defaults.set([id], forKey: Post.dismissedPostsKey)
         }
         defaults.synchronize()
     }

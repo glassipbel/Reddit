@@ -29,6 +29,9 @@
 		0A776B4520E946DA0070B765 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B4420E946DA0070B765 /* Post.swift */; };
 		0A776B4720E947350070B765 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B4620E947350070B765 /* User.swift */; };
 		0A776B4C20E954CC0070B765 /* URLSessionDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B4B20E954CC0070B765 /* URLSessionDownloader.swift */; };
+		0A776B4E20E955460070B765 /* PostProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B4D20E955460070B765 /* PostProvider.swift */; };
+		0A776B5120E9584D0070B765 /* PostMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B5020E9584D0070B765 /* PostMapper.swift */; };
+		0A776B5320E958740070B765 /* PostManualMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B5220E958740070B765 /* PostManualMapper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		0A776B4420E946DA0070B765 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		0A776B4620E947350070B765 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0A776B4B20E954CC0070B765 /* URLSessionDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionDownloader.swift; sourceTree = "<group>"; };
+		0A776B4D20E955460070B765 /* PostProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostProvider.swift; sourceTree = "<group>"; };
+		0A776B5020E9584D0070B765 /* PostMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMapper.swift; sourceTree = "<group>"; };
+		0A776B5220E958740070B765 /* PostManualMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostManualMapper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +260,9 @@
 		0A776B3E20E946300070B765 /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				0A776B4D20E955460070B765 /* PostProvider.swift */,
+				0A776B5220E958740070B765 /* PostManualMapper.swift */,
+				0A776B4F20E958380070B765 /* Protocols */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -265,6 +274,14 @@
 				0A776B4620E947350070B765 /* User.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		0A776B4F20E958380070B765 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				0A776B5020E9584D0070B765 /* PostMapper.swift */,
+			);
+			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,9 +357,12 @@
 			files = (
 				0A776B2B20E944620070B765 /* GenericCellConfigurator.swift in Sources */,
 				0A776B4320E9467C0070B765 /* PostDetailViewController.swift in Sources */,
+				0A776B4E20E955460070B765 /* PostProvider.swift in Sources */,
 				0A776B4120E946600070B765 /* PostListViewController.swift in Sources */,
 				0A776B3320E944620070B765 /* APIErrors.swift in Sources */,
 				0A776B4520E946DA0070B765 /* Post.swift in Sources */,
+				0A776B5320E958740070B765 /* PostManualMapper.swift in Sources */,
+				0A776B5120E9584D0070B765 /* PostMapper.swift in Sources */,
 				0A776B4C20E954CC0070B765 /* URLSessionDownloader.swift in Sources */,
 				0A776B2D20E944620070B765 /* GenericCollectionCellSelfSizingProtocol.swift in Sources */,
 				0A776B2E20E944620070B765 /* GenericCollectionHeaderProtocol.swift in Sources */,
