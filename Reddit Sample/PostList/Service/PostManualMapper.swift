@@ -10,14 +10,16 @@ import Foundation
 
 final class PostManualMapper: PostMapper {
     func getAfterKey(dict: [String : Any]) -> String? {
-        //TODO KEV:
-        return nil
+        guard let dataDict = dict["data"] as? [String: Any] else { return nil }
+        return dataDict["after"] as? String
     }
     
     func mapPosts(dict: [String : Any]) -> [Post] {
-        //TODO KEV:
-        return []
+        guard let dataDict = dict["data"] as? [String: Any] else { return [] }
+        guard let childrenDictArray = dataDict["children"] as? [[String: Any]] else { return [] }
+        return childrenDictArray.compactMap {
+            guard let postDict = $0["data"] as? [String: Any] else { return nil }
+            return Post(dict: postDict)
+        }
     }
-    
-    
 }

@@ -26,7 +26,9 @@ final class PostProvider {
                 self.afterKey = self.postMapper.getAfterKey(dict: redditResponseJSON)
                 self.shouldKeepRequestion = self.afterKey != nil
                 self.cachedPosts.append(contentsOf: posts)
-                completion(posts)
+                DispatchQueue.main.async {
+                     completion(posts)
+                }
             }
         )
     }
