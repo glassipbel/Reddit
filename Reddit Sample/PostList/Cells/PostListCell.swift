@@ -33,6 +33,7 @@ final class PostListCell: UICollectionViewCell {
     
     private let thumbnailImageView: UIImageView = {
         let imageView = UIImageView(target: nil, action: nil)
+        imageView.contentMode = .scaleAspectFill
         return imageView
     }()
     
@@ -109,6 +110,8 @@ extension PostListCell: GenericCollectionCellProtocol, GenericCollectionCellSelf
         createdTimeLabel.text = post.creationTimePrintable
         if let url = post.thumbnailURL {
             thumbnailImageView.imageAsync(url: url)
+        } else {
+            thumbnailImageView.image = #imageLiteral(resourceName: "placeholder")
         }
         titleLabel.text = post.title
         commentsLabel.text = "\(post.commentsAmount) comments"
@@ -121,7 +124,8 @@ extension PostListCell: GenericCollectionCellProtocol, GenericCollectionCellSelf
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath, with item: Any) -> CGSize {
         self.collectionView(collectionView: collectionView, cellForItemAt: indexPath, with: item)
-        return selfSizing(desiredWidth: collectionView.bounds.width)
+        let suggestedSize = selfSizing(desiredWidth: collectionView.bounds.width)
+        return CGSize(width: suggestedSize.width, height: suggestedSize.height)
     }
 }
 
@@ -152,21 +156,24 @@ extension PostListCell {
         createdTimeLabel.rightAnchor.constraint(lessThanOrEqualTo: contentView.rightAnchor, constant: -14.0).isActive = true
         createdTimeLabel.centerYAnchor.constraint(equalTo: authorLabel.centerYAnchor).isActive = true
         
-        thumbnailImageView.topAnchor.constraint(equalTo: authorLabel.bottomAnchor, constant: 14.0).isActive = true
+        thumbnailImageView.topAnchor.constraint(greaterThanOrEqualTo: authorLabel.bottomAnchor, constant: 14.0).isActive = true
+        thumbnailImageView.centerYAnchor.constraint(equalTo: titleLabel.centerYAnchor).isActive = true
         thumbnailImageView.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 14.0).isActive = true
         thumbnailImageView.widthAnchor.constraint(equalToConstant: 90.0).isActive = true
         thumbnailImageView.heightAnchor.constraint(equalToConstant: 90.0).isActive = true
+        thumbnailImageView.bottomAnchor.constraint(lessThanOrEqualTo: dismissImageView.topAnchor, constant: -14.0).isActive = true
         
-        titleLabel.centerYAnchor.constraint(equalTo: thumbnailImageView.centerYAnchor).isActive = true
         titleLabel.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .vertical)
         titleLabel.setContentCompressionResistancePriority(UILayoutPriority.defaultHigh, for: .vertical)
-        titleLabel.topAnchor.constraint(greaterThanOrEqualTo: authorLabel.bottomAnchor, constant: 4.0).isActive = true
-        titleLabel.bottomAnchor.constraint(lessThanOrEqualTo: dismissImageView.topAnchor, constant: -4.0).isActive = true
+        titleLabel.topAnchor.constraint(equalTo: authorLabel.bottomAnchor, constant: 14.0).isActive = true
+        titleLabel.bottomAnchor.constraint(equalTo: dismissImageView.topAnchor, constant: -4.0).isActive = true
+        titleLabel.leftAnchor.constraint(equalTo: thumbnailImageView.rightAnchor, constant: 14.0).isActive = true
         
         rightArrowImageView.heightAnchor.constraint(equalToConstant: 16.0).isActive = true
         rightArrowImageView.widthAnchor.constraint(equalToConstant: 16.0).isActive = true
         rightArrowImageView.leftAnchor.constraint(equalTo: titleLabel.rightAnchor, constant: 14.0).isActive = true
         rightArrowImageView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -14.0).isActive = true
+        rightArrowImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor).isActive = true
         
         dismissImageView.heightAnchor.constraint(equalToConstant: 24.0).isActive = true
         dismissImageView.widthAnchor.constraint(equalToConstant: 24.0).isActive = true

@@ -22,26 +22,18 @@ final class URLSessionDownloader: DownloaderAbstract {
         let config = URLSessionConfiguration.default
         let session = URLSession(configuration: config)
         
-        let task = session.dataTask(with: urlRequest) { (data, response, error) in
-            
-            if let error = error {
-                DispatchQueue.main.async {
-                    onFailure?({ throw error })
-                    onFailureGeneral?(error)
+        DispatchQueue.global(qos: .userInitiated).async {
+            let task = session.dataTask(with: urlRequest) { (data, response, error) in
+                
+                if let error = error {
+                    DispatchQueue.main.async {
+                        onFailure?({ throw error })
+                        onFailureGeneral?(error)
+                    }
+                    return
                 }
-                return
-            }
-            
-            guard let responseData = data else {
-                DispatchQueue.main.async {
-                    onFailure?({ throw APIErrors.invalidResponse })
-                    onFailureGeneral?(APIErrors.invalidResponse)
-                }
-                return
-            }
-            
-            do {
-                guard let jsonDict = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any] else {
+                
+                guard let responseData = data else {
                     DispatchQueue.main.async {
                         onFailure?({ throw APIErrors.invalidResponse })
                         onFailureGeneral?(APIErrors.invalidResponse)
@@ -49,18 +41,28 @@ final class URLSessionDownloader: DownloaderAbstract {
                     return
                 }
                 
-                DispatchQueue.main.async {
-                    onSuccess(jsonDict)
+                do {
+                    guard let jsonDict = try JSONSerialization.jsonObject(with: responseData, options: []) as? [String: Any] else {
+                        DispatchQueue.main.async {
+                            onFailure?({ throw APIErrors.invalidResponse })
+                            onFailureGeneral?(APIErrors.invalidResponse)
+                        }
+                        return
+                    }
+                    
+                    DispatchQueue.main.async {
+                        onSuccess(jsonDict)
+                    }
+                    
+                } catch  {
+                    DispatchQueue.main.async {
+                        onFailure?({ throw APIErrors.invalidResponse })
+                        onFailureGeneral?(APIErrors.invalidResponse)
+                    }
+                    return
                 }
-                
-            } catch  {
-                DispatchQueue.main.async {
-                    onFailure?({ throw APIErrors.invalidResponse })
-                    onFailureGeneral?(APIErrors.invalidResponse)
-                }
-                return
             }
+            task.resume()
         }
-        task.resume()
     }
 }
