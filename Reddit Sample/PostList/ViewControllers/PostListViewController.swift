@@ -21,7 +21,7 @@ final class PostListViewController: UIViewController {
     override func viewDidLoad() {
         setupController()
         collectionView.addSubview(refreshControl)
-        
+        self.title = "Reddit Posts"
         controller.getDrilldownPostCells { [weak self] configFiles in
             self?.setupDatasourceAndDelegate(configFiles: configFiles)
         }

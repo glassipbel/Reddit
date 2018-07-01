@@ -22,6 +22,7 @@ extension UIImageView {
     }
     
     public func imageAsync(url: URL) {
+        self.image = nil
         URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
             guard let data = data, error == nil else {
                 return

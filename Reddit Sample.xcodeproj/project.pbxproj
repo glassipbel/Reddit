@@ -39,6 +39,7 @@
 		0A776B5E20E961820070B765 /* ButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B5D20E961820070B765 /* ButtonExtensions.swift */; };
 		0A776B6020E96BF60070B765 /* CollectionViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B5F20E96BF60070B765 /* CollectionViewCellExtensions.swift */; };
 		0A776B6220E96C520070B765 /* PostListCellConfigFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B6120E96C520070B765 /* PostListCellConfigFile.swift */; };
+		0A776B6420E984230070B765 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B6320E984230070B765 /* DateExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		0A776B5D20E961820070B765 /* ButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtensions.swift; sourceTree = "<group>"; };
 		0A776B5F20E96BF60070B765 /* CollectionViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellExtensions.swift; sourceTree = "<group>"; };
 		0A776B6120E96C520070B765 /* PostListCellConfigFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListCellConfigFile.swift; sourceTree = "<group>"; };
+		0A776B6320E984230070B765 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -301,6 +303,7 @@
 				0A776B5B20E9616F0070B765 /* LabelExtensions.swift */,
 				0A776B5D20E961820070B765 /* ButtonExtensions.swift */,
 				0A776B5F20E96BF60070B765 /* CollectionViewCellExtensions.swift */,
+				0A776B6320E984230070B765 /* DateExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				0A776B6020E96BF60070B765 /* CollectionViewCellExtensions.swift in Sources */,
 				0A776B5320E958740070B765 /* PostManualMapper.swift in Sources */,
 				0A776B5120E9584D0070B765 /* PostMapper.swift in Sources */,
+				0A776B6420E984230070B765 /* DateExtensions.swift in Sources */,
 				0A776B4C20E954CC0070B765 /* URLSessionDownloader.swift in Sources */,
 				0A776B2D20E944620070B765 /* GenericCollectionCellSelfSizingProtocol.swift in Sources */,
 				0A776B2E20E944620070B765 /* GenericCollectionHeaderProtocol.swift in Sources */,

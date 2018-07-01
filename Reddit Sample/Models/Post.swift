@@ -48,12 +48,7 @@ final class Post {
 
 extension Post {
     var creationTimePrintable: String {
-        //TODO KEV: change to x hours ago if i got time.
-        let dateFormatter = DateFormatter()
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT")
-        dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm"
-        return dateFormatter.string(from: self.creationTime)
+        return creationTime.timeAgo()
     }
     
     static func cleanPostsState() {
