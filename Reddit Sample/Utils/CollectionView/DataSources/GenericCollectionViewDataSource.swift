@@ -116,6 +116,25 @@ extension GenericCollectionViewDataSource {
         return IndexPath(item: indexInSection, section: configFile.section)
     }
     
+    func deleteEverything(andInsert configFiles: [GenericCollectionCellConfigurator], completion: (()->())? = nil) {
+        let insertIndexPaths = getStandaloneIndexPaths(configFiles: configFiles.filter { $0.typeCell == .cell })
+        let maxOldSection = self.configFiles.sorted { $0.section > $1.section }.first?.section ?? 0
+        let maxSection = configFiles.sorted { $0.section > $1.section }.first?.section ?? 0
+        
+        self.collectionView.performBatchUpdates({
+            self.collectionView.deleteSections(IndexSet(integersIn: 0 ... maxOldSection))
+            
+            self.configFiles = configFiles
+            
+            self.collectionView.insertSections(IndexSet(integersIn: 0 ... maxSection))
+            self.collectionView.insertItems(at: insertIndexPaths)
+            
+        }) { completed in
+            if !completed { return }
+            completion?()
+        }
+    }
+    
     func deleteRow(by filter: @escaping (GenericCollectionCellConfigurator)->Bool, completion: (()->())? = nil) {
         self.collectionView.performBatchUpdates({
             guard let indexPath = self.getIndexPath(by: filter) else { return }

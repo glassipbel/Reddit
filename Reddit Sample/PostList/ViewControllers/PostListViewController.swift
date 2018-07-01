@@ -11,9 +11,16 @@ import UIKit
 final class PostListViewController: UIViewController {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    private lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refreshList), for: UIControlEvents.valueChanged)
+        refreshControl.tintColor = UIColor.orange
+        return refreshControl
+    }()
     
     override func viewDidLoad() {
         setupController()
+        collectionView.addSubview(refreshControl)
         
         controller.getDrilldownPostCells { [weak self] configFiles in
             self?.setupDatasourceAndDelegate(configFiles: configFiles)
@@ -23,6 +30,14 @@ final class PostListViewController: UIViewController {
     @IBAction func tapDismissAll() {
         controller.markAllPostsAsDismissed()
         datasource?.deleteAllRowsAt(section: 0)
+    }
+    
+    @objc func refreshList() {
+        controller.refresh { [weak self] configFiles in
+            self?.datasource?.deleteEverything(andInsert: configFiles) {
+                self?.refreshControl.endRefreshing()
+            }
+        }
     }
     
     private var datasource: GenericCollectionViewDataSource?

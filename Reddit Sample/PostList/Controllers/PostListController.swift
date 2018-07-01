@@ -28,6 +28,11 @@ final class PostListController {
         }
     }
     
+    func refresh(completion: @escaping ([GenericCollectionCellConfigurator]) -> ()) {
+        provider.clean()
+        getDrilldownPostCells(completion: completion)
+    }
+    
     private weak var postCellActions: PostListCellActions?
     private var cellSizing: PostListCell = PostListCell(frame: .zero)
     private var provider: PostProvider
