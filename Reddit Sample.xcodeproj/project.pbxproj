@@ -26,6 +26,8 @@
 		0A776B3520E944620070B765 /* DownloaderAbstract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B2720E944620070B765 /* DownloaderAbstract.swift */; };
 		0A776B4120E946600070B765 /* PostListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B4020E946600070B765 /* PostListViewController.swift */; };
 		0A776B4320E9467C0070B765 /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B4220E9467C0070B765 /* PostDetailViewController.swift */; };
+		0A776B4520E946DA0070B765 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B4420E946DA0070B765 /* Post.swift */; };
+		0A776B4720E947350070B765 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B4620E947350070B765 /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		0A776B2720E944620070B765 /* DownloaderAbstract.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DownloaderAbstract.swift; sourceTree = "<group>"; };
 		0A776B4020E946600070B765 /* PostListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListViewController.swift; sourceTree = "<group>"; };
 		0A776B4220E9467C0070B765 /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		0A776B4420E946DA0070B765 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		0A776B4620E947350070B765 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +258,8 @@
 		0A776B3F20E9463D0070B765 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0A776B4420E946DA0070B765 /* Post.swift */,
+				0A776B4620E947350070B765 /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 				0A776B4320E9467C0070B765 /* PostDetailViewController.swift in Sources */,
 				0A776B4120E946600070B765 /* PostListViewController.swift in Sources */,
 				0A776B3320E944620070B765 /* APIErrors.swift in Sources */,
+				0A776B4520E946DA0070B765 /* Post.swift in Sources */,
 				0A776B2D20E944620070B765 /* GenericCollectionCellSelfSizingProtocol.swift in Sources */,
 				0A776B2E20E944620070B765 /* GenericCollectionHeaderProtocol.swift in Sources */,
 				0A776B3020E944620070B765 /* GenericCollectionCellProtocol.swift in Sources */,
@@ -342,6 +349,7 @@
 				0A776B3120E944620070B765 /* GenericCollectionFooterSelfSizingProtocol.swift in Sources */,
 				0A776B2820E944620070B765 /* GenericCollectionViewDataSource.swift in Sources */,
 				0A776B2A20E944620070B765 /* CollectionCellType.swift in Sources */,
+				0A776B4720E947350070B765 /* User.swift in Sources */,
 				0A776B2F20E944620070B765 /* GenericCollectionActions.swift in Sources */,
 				0A776AFB20E9437A0070B765 /* AppDelegate.swift in Sources */,
 				0A776B2C20E944620070B765 /* GenericCollectionViewDelegate.swift in Sources */,
