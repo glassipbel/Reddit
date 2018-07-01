@@ -117,10 +117,10 @@ extension PostListCell: GenericCollectionCellProtocol, GenericCollectionCellSelf
         commentsLabel.text = "\(post.commentsAmount) comments"
     }
     
-//    func collectionView(collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        guard let id = configFile?.postId, let post = configFile?.provider?.getPost(withId: id) else { return }
-//        configFile?.actions?.tapPost(post: post)
-//    }
+    func collectionView(collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard let id = configFile?.postId, let post = configFile?.provider?.getPost(withId: id) else { return }
+        configFile?.actions?.tapPost(post: post)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath, with item: Any) -> CGSize {
         self.collectionView(collectionView: collectionView, cellForItemAt: indexPath, with: item)

@@ -20,7 +20,6 @@ final class PostDetailViewController: UIViewController {
             thumbnailImageView.imageAsync(url: url)
         } else {
             thumbnailImageView.image = nil
-            thumbnailImageView.backgroundColor = .lightGray
         }
         titleLabel.text = post?.title ?? ""
     }

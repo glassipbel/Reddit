@@ -221,7 +221,6 @@
 				0A776B3E20E946300070B765 /* Service */,
 				0A776B3B20E9460C0070B765 /* Cells */,
 				0A776B3C20E9460C0070B765 /* Controllers */,
-				0A776B3D20E9460C0070B765 /* Protocols */,
 				0A776B3A20E9460C0070B765 /* ViewControllers */,
 			);
 			path = PostList;
@@ -266,13 +265,6 @@
 				0A776B5420E95CF90070B765 /* PostListController.swift */,
 			);
 			path = Controllers;
-			sourceTree = "<group>";
-		};
-		0A776B3D20E9460C0070B765 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		0A776B3E20E946300070B765 /* Service */ = {

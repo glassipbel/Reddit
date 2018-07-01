@@ -22,7 +22,7 @@ final class PostProvider {
         downloader.get(
             url: getURL(),
             onSuccess: { [unowned self] redditResponseJSON in
-                let posts = self.postMapper.mapPosts(dict: redditResponseJSON)
+                let posts = self.postMapper.mapPosts(dict: redditResponseJSON).filter { !$0.dismissed }
                 self.afterKey = self.postMapper.getAfterKey(dict: redditResponseJSON)
                 self.shouldKeepRequestion = self.afterKey != nil
                 self.cachedPosts.append(contentsOf: posts)
