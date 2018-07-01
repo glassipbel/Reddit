@@ -24,6 +24,7 @@ final class PostListController {
     private var provider: PostProvider
 }
 
+// MARK: - Cell Builder.
 extension PostListController {
     private func getPostCell(post: Post) -> GenericCollectionCellConfigurator {
         //TODO KEV: Change this.
@@ -31,6 +32,7 @@ extension PostListController {
     }
 }
 
+// MARK: - Post Provider
 extension PostListController {
     func getPost(withId id: String) -> Post? {
         return provider.cachedPosts.first { $0.id == id }
