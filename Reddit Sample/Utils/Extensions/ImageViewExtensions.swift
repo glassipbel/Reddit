@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIImageView {
-    convenience init(image: UIImage, target: Any?, action: Selector?) {
+    convenience init(image: UIImage? = nil, target: Any?, action: Selector?) {
         self.init(image: image)
         
         let tapGesture = UITapGestureRecognizer(target: target, action: action)

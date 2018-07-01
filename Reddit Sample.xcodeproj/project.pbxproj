@@ -37,6 +37,8 @@
 		0A776B5A20E960A00070B765 /* ImageViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B5920E960A00070B765 /* ImageViewExtensions.swift */; };
 		0A776B5C20E9616F0070B765 /* LabelExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B5B20E9616F0070B765 /* LabelExtensions.swift */; };
 		0A776B5E20E961820070B765 /* ButtonExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B5D20E961820070B765 /* ButtonExtensions.swift */; };
+		0A776B6020E96BF60070B765 /* CollectionViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B5F20E96BF60070B765 /* CollectionViewCellExtensions.swift */; };
+		0A776B6220E96C520070B765 /* PostListCellConfigFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B6120E96C520070B765 /* PostListCellConfigFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		0A776B5920E960A00070B765 /* ImageViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageViewExtensions.swift; sourceTree = "<group>"; };
 		0A776B5B20E9616F0070B765 /* LabelExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelExtensions.swift; sourceTree = "<group>"; };
 		0A776B5D20E961820070B765 /* ButtonExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonExtensions.swift; sourceTree = "<group>"; };
+		0A776B5F20E96BF60070B765 /* CollectionViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellExtensions.swift; sourceTree = "<group>"; };
+		0A776B6120E96C520070B765 /* PostListCellConfigFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListCellConfigFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				0A776B5620E95FBB0070B765 /* PostListCell.swift */,
+				0A776B6120E96C520070B765 /* PostListCellConfigFile.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -303,6 +308,7 @@
 				0A776B5920E960A00070B765 /* ImageViewExtensions.swift */,
 				0A776B5B20E9616F0070B765 /* LabelExtensions.swift */,
 				0A776B5D20E961820070B765 /* ButtonExtensions.swift */,
+				0A776B5F20E96BF60070B765 /* CollectionViewCellExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -386,6 +392,7 @@
 				0A776B3320E944620070B765 /* APIErrors.swift in Sources */,
 				0A776B5A20E960A00070B765 /* ImageViewExtensions.swift in Sources */,
 				0A776B4520E946DA0070B765 /* Post.swift in Sources */,
+				0A776B6020E96BF60070B765 /* CollectionViewCellExtensions.swift in Sources */,
 				0A776B5320E958740070B765 /* PostManualMapper.swift in Sources */,
 				0A776B5120E9584D0070B765 /* PostMapper.swift in Sources */,
 				0A776B4C20E954CC0070B765 /* URLSessionDownloader.swift in Sources */,
@@ -397,6 +404,7 @@
 				0A776B2920E944620070B765 /* SizingType.swift in Sources */,
 				0A776B5C20E9616F0070B765 /* LabelExtensions.swift in Sources */,
 				0A776B5720E95FBB0070B765 /* PostListCell.swift in Sources */,
+				0A776B6220E96C520070B765 /* PostListCellConfigFile.swift in Sources */,
 				0A776B3220E944620070B765 /* GenericCollectionHeaderSelfSizingProtocol.swift in Sources */,
 				0A776B3120E944620070B765 /* GenericCollectionFooterSelfSizingProtocol.swift in Sources */,
 				0A776B2820E944620070B765 /* GenericCollectionViewDataSource.swift in Sources */,
