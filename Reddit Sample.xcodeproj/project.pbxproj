@@ -40,6 +40,7 @@
 		0A776B6020E96BF60070B765 /* CollectionViewCellExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B5F20E96BF60070B765 /* CollectionViewCellExtensions.swift */; };
 		0A776B6220E96C520070B765 /* PostListCellConfigFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B6120E96C520070B765 /* PostListCellConfigFile.swift */; };
 		0A776B6420E984230070B765 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B6320E984230070B765 /* DateExtensions.swift */; };
+		0A776B6620E98B240070B765 /* MasterCustomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A776B6520E98B240070B765 /* MasterCustomViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		0A776B5F20E96BF60070B765 /* CollectionViewCellExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewCellExtensions.swift; sourceTree = "<group>"; };
 		0A776B6120E96C520070B765 /* PostListCellConfigFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostListCellConfigFile.swift; sourceTree = "<group>"; };
 		0A776B6320E984230070B765 /* DateExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		0A776B6520E98B240070B765 /* MasterCustomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterCustomViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 				0A776B0120E9437A0070B765 /* Assets.xcassets */,
 				0A776B0320E9437A0070B765 /* LaunchScreen.storyboard */,
 				0A776B0620E9437A0070B765 /* Info.plist */,
+				0A776B6520E98B240070B765 /* MasterCustomViewController.swift */,
 			);
 			path = "Reddit Sample";
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				0A776B5E20E961820070B765 /* ButtonExtensions.swift in Sources */,
 				0A776B4120E946600070B765 /* PostListViewController.swift in Sources */,
 				0A776B3320E944620070B765 /* APIErrors.swift in Sources */,
+				0A776B6620E98B240070B765 /* MasterCustomViewController.swift in Sources */,
 				0A776B5A20E960A00070B765 /* ImageViewExtensions.swift in Sources */,
 				0A776B4520E946DA0070B765 /* Post.swift in Sources */,
 				0A776B6020E96BF60070B765 /* CollectionViewCellExtensions.swift in Sources */,

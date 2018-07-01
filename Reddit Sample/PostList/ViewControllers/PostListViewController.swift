@@ -40,6 +40,10 @@ final class PostListViewController: UIViewController {
         }
     }
     
+    override func didRotate(from fromInterfaceOrientation: UIInterfaceOrientation) {
+        collectionView.reloadData()
+    }
+    
     private var datasource: GenericCollectionViewDataSource?
     private var delegate: GenericCollectionViewDelegate?
     private var controller: PostListController!
@@ -81,8 +85,8 @@ extension PostListViewController: PostListCellActions {
         if let indexPath = getIndexPath(ofPost: post) {
            datasource?.reloadAt(indexPath: indexPath)
         }
-        
-        showDetailViewController(PostDetailViewController.newInstance(post: post), sender: self)
+        let navBar = UINavigationController(rootViewController: PostDetailViewController.newInstance(post: post))
+        showDetailViewController(navBar, sender: self)
     }
 }
 

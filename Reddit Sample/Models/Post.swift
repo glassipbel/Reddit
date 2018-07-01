@@ -53,7 +53,6 @@ extension Post {
     
     static func cleanPostsState() {
         let defaults = UserDefaults.standard
-        defaults.set(nil, forKey: readPostsKey)
         defaults.set(nil, forKey: dismissedPostsKey)
         defaults.synchronize()
     }
