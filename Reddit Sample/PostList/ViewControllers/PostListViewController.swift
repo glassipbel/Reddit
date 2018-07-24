@@ -20,11 +20,9 @@ final class PostListViewController: UIViewController {
     
     override func viewDidLoad() {
         setupController()
-        collectionView.addSubview(refreshControl)
-        self.title = "Reddit Posts"
-        controller.getDrilldownPostCells { [weak self] configFiles in
-            self?.setupDatasourceAndDelegate(configFiles: configFiles)
-        }
+        setupCollectionView()
+        setupTitle()
+        loadDrilldownPosts()
     }
     
     @IBAction func tapDismissAll() {
@@ -67,6 +65,20 @@ extension PostListViewController {
         return datasource?.getIndexPath {
             guard let item = $0.item as? PostListCellConfigFile else { return false }
             return item.postId == post.id
+        }
+    }
+    
+    private func setupCollectionView() {
+        collectionView.addSubview(refreshControl)
+    }
+    
+    private func setupTitle() {
+        self.title = "Reddit Posts"
+    }
+    
+    private func loadDrilldownPosts() {
+        controller.getDrilldownPostCells { [weak self] configFiles in
+            self?.setupDatasourceAndDelegate(configFiles: configFiles)
         }
     }
 }
